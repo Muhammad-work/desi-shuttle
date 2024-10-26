@@ -7,55 +7,46 @@
     <title>Desi Shuttel</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <link rel="stylesheet" href="../asset/style.css">
+    <!-- <link rel="stylesheet" href="style.css"> -->
 </head>
 
 <body>
   
-    <!-- navbar start here -->
-    <nav>
-        <div class="nav-container">
-            <div class="nav-content  icon-container">
-                <img class="icon" src="https://careem-public-web-media.imgix.net/careem_logo_new_346308a18e.webp/" alt="">
-                <div>
-                    <ul>
-                        <li class="top-menu"> Services</li>
-                        <li class="top-menu">Partners</li>
-                        <li class="top-menu">Careem Plus</li>
-                        <li class="top-menu">About us</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="nav-content  icon-container">
-                <button class="hover:translate-y-[-2px] hover:ease-in-out">sign in</button>
-                <button class="fa-bar"><i class="fa-solid fa-bars"></i></button>
-            </div>
+    <!-- nav bar section start -->
+
+    <nav class="sticky top-0 left-0 w-full bg-white flex justify-between items-center px-5 py-4 shadow-md z-20 relative">
+        <div class="flex items-center gap-4">
+            <img class="md:w-[20%] w-[50%] h-8 cursor-pointer" src="https://careem-public-web-media.imgix.net/careem_logo_new_346308a18e.webp" alt="">
+            <ul class="hidden sm:flex gap-4 text-gray-800 cursor-pointer">
+                <li class="hover:text-green-500 transition-all duration-500">Services</li>
+                <li class="hover:text-green-500 transition-all duration-500">Partners</li>
+                <li class="hover:text-green-500 transition-all duration-500">Careem Plus</li>
+                <li class="hover:text-green-500 transition-all duration-500">About us</li>
+            </ul>
+        </div>
+        <div class="flex items-center gap-4">
+            <button class="bg-green-400 text-white font-bold py-2 px-4 rounded hover:translate-y-[-1px] transition-all">Sign in</button>
+            <button class="block sm:hidden text-2xl text-green-400 fa-bar"><i class="fa-solid fa-bars"></i></button>
         </div>
     </nav>
 
-    <!-- navbar end here -->
+    <!-- nav bar section start -->
 
 
-    <!-- sidebar start here -->
-       
-      <div class="sidebat-container">
-          <button class="sidebar-bar">X</button>
-      </div>
-      
-     
-    <!-- sideba end here -->
+    <!-- Sidebar (Hidden by default) -->
+    <div class="fixed top-0 left-0 w-72 h-screen z-30 bg-white shadow-lg transform -translate-x-full transition-all sidebat-container">
+        <button class="absolute top-4 right-4 text-white bg-red-600 py-2 px-4 rounded sidebar-bar">X</button>
+    </div>
+
+       <!-- Hero Section -->
+       <div class="w-full md:h-[490px] mt-4 px-5 relative">
+        <div class="bg-blue-400 rounded-[35px] md:h-full h-[300px] md:w-full w-full overflow-hidden">
+            <img class="w-full h-full object-cover rounded-[35px]" src="https://careem-public-web-media.imgix.net/web_f0213e6ec9.webp" alt="">
+            <button class="absolute bottom-10 left-10 bg-green-400 text-white font-bold px-10 py-4 rounded hover:translate-y-[-1px] transition-all">Subscribe Now</button>
+        </div>
+    </div>
 
 
-    <!-- hero section start -->
- 
-       <div class="w-full md:h-[490px]  z-12 px-5 mt-4">
-          <div class=" w-full mx-auto bg-blue-400 rounded-[35px]  md:h-full h-[400px]  relative">
-              <img class="md:w-full md:h-full   w-[1000%] h-[100%] block mx-auto rounded-[35px] " src="https://careem-public-web-media.imgix.net/web_f0213e6ec9.webp" alt="">
-               <button class="absolute hover:translate-y-[-3px] hover:ease-in-out md:bottom-[40px] md:left-[50px] bottom-[20px] left-[20px] rounded-lg cursor-pointer font-bold bg-green-400 px-10 py-4">Subscribe Now</button>
-          </div>
-       </div>
-
-    <!-- hero section end -->
 
 
     <!-- members-save  section start-->
@@ -74,9 +65,9 @@
 
 
     <!--  Rides section start -->
-        <div class="w-full md:h-[460px] h-auto bg-green-400 ">
+        <div class="w-full md:h-[460px] h-auto  bg-gradient-to-br from-[#00493E] to-[#00A676] clip-path-custom bg-cover" style="background-image: url('https://www.careem.com/images/background-with-sides-clipped.png');"">
             <div class="w-full h-full md:flex  justify-around place-items-center  p-10">
-                <div class=" md:w-[46%] w-[100%] h-auto ">
+                <div class=" md:w-[46%] w-[100%] h-auto mt-5">
                     <img  class="md:w-[80%] w-[100%] h-full md:mx-auto rounded-2xl" src="https://careem-public-web-media.imgix.net/Rides_and_Hala_Taxi_240902_C_Plus_T1_Campaign_Website_Image_902x691_AE_c01939ec3b.webp" alt="">
                 </div>
                 <div class="mt-7">
@@ -109,9 +100,9 @@
 
      <!-- Unlimited free delivery second section start -->
 
-     <div class="w-full md:h-[460px] h-auto bg-green-400 mt-10">
+     <div class="w-full md:h-[460px] h-auto mt-10 bg-gradient-to-br from-[#00493E] to-[#00A676] clip-path-custom bg-cover" style="background-image: url('https://www.careem.com/images/background-with-sides-clipped.png');">
         <div class="w-full h-full md:flex  justify-around place-items-center  p-10">
-            <div class=" md:w-[46%] w-[100%] h-auto ">
+            <div class=" md:w-[46%] w-[100%] h-auto mt-5">
                 <img  class="md:w-[80%] w-[100%] h-full md:mx-auto rounded-2xl" src="https://careem-public-web-media.imgix.net/Groceries_240902_C_Plus_T1_Campaign_Website_Image_902x691_AE_3acbad64ff.webp" alt="">
             </div>
             <div class="mt-7">
@@ -175,45 +166,42 @@
 
 <!-- subscribe to dise shuttel start -->
  
-  <div class="w-full h-auto bg-green-400 mt-9 mb-10 md:p-10 p-5">
-     <h1 class="text-center text-white font-extrabold text-4xl mt-6">How to subscribe to Careem Plus</h1>
-
-      <div class="w-full h-full flex  md:flex-row  flex-col-reverse mt-5 ">
-         <div class="md:w-[40%] mt-5 w-[80%] h-auto mx-auto">
-             <img id="setNewImg" src="https://careem-public-web-media.imgix.net/01_Tap_on_careem_plus_2x_8d099410a7.png" alt="">
-         </div>
-         <div class="md:w-[55%]  w-full py-2 px-3 ">
-             <div class="flex gap-7 place-items-center ">
-                <div class="bg-white inline px-7 py-5 text-center rounded-full font-bold text-lg relative cursor-pointer " id="img-count">1 <div class="absolute top-[65px] left-[32px] w-[2px] md:h-[55px] h-[90px] bg-white"></div></div>
-                <!-- <div class="bg-white inline px-7 py-5 text-center rounded-full font-bold text-lg relative cursor-pointer " id="img-count">2<div class="absolute top-[65px] left-[32px] w-[2px] h-[55px] bg-white"></div></div> -->
-                <div>
-                    <p class="text-2xl font-bold mt-3 text-white ">Tap on Careem Plus</p>
-                    <p class="mt-2 w-[80%] text-white font-bold ">Check out the exclusive benefits of your Careem Plus subscription</p>
-                </div>
-             </div>
-             <div class="flex gap-7 place-items-center md:mt-5 ">
-                <div class="bg-white inline px-7 py-5 text-center rounded-full font-bold text-lg relative cursor-pointer " id="img-count">2<div class="absolute top-[65px] left-[32px] w-[2px] md:h-[55px] h-[90px] bg-white"></div></div>
-                <div>
-                    <p class="text-2xl font-bold mt-3 text-white ">Confirm your payment</p>
-                    <p class="mt-2 w-[80%] text-white font-bold ">Tap on ‘Subscribe now’ to make the payment and start your subscription
-
-                    </p>
-                </div>
-             </div>
-             <div class="flex gap-7 place-items-center md:mt-5">
-                <div class="bg-white inline px-7 py-5 text-center rounded-full font-bold text-lg cursor-pointer " id="img-count">3</div>
-                <div>
-                    <p class="text-2xl font-bold mt-3 text-white ">You’re now subscribed</p>
-                    <p class="mt-2 w-[80%] text-white font-bold ">Start saving with Careem Plus. You can easily track your savings on your Careem Plus profile.</p>
-                </div>
-             </div>
-             <!-- <div></div>
-             <div></div> -->
-         </div>
+<div class="w-full h-auto mt-9 mb-10 p-5 md:p-10 bg-gradient-to-br from-[#00493E] to-[#00A676] clip-path-custom bg-cover" style="background-image: url('https://www.careem.com/images/background-with-sides-clipped.png');">
+    <h1 class="text-center text-white font-extrabold text-2xl md:text-4xl mt-10 md:mt-6">How to subscribe to Careem Plus</h1>
+  
+    <div class="w-full h-full flex flex-col-reverse md:flex-row ">
+      <div class="md:w-[40%] w-[80%] mx-auto mt-5">
+        <img id="setNewImg" class="w-full h-auto" src="https://careem-public-web-media.imgix.net/01_Tap_on_careem_plus_2x_8d099410a7.png" alt="">
       </div>
-
+      <div class="md:w-[55%] w-full py-2 px-3">
+        <div class="flex gap-4 md:gap-7 items-center">
+          <div class="bg-white px-4 py-3 md:px-7 md:py-5 text-center rounded-full font-bold text-sm md:text-lg relative cursor-pointer" id="img-count">1
+            <div class="absolute top-[50px] md:top-[65px] left-[24px] md:left-[32px] w-[2px] md:h-[55px] h-[70px] bg-white"></div>
+          </div>
+          <div>
+            <p class="text-lg md:text-2xl font-bold mt-2 md:mt-3 text-white">Tap on Careem Plus</p>
+            <p class="mt-1 md:mt-2 w-[90%] md:w-[80%] text-white text-sm md:text-base font-bold">Check out the exclusive benefits of your Careem Plus subscription</p>
+          </div>
+        </div>
+        <div class="flex gap-4 md:gap-7 items-center mt-3 md:mt-5">
+          <div class="bg-white px-4 py-3 md:px-7 md:py-5 text-center rounded-full font-bold text-sm md:text-lg relative cursor-pointer" id="img-count">2
+            <div class="absolute top-[50px] md:top-[65px] left-[24px] md:left-[32px] w-[2px] md:h-[55px] h-[70px] bg-white"></div>
+          </div>
+          <div>
+            <p class="text-lg md:text-2xl font-bold mt-2 md:mt-3 text-white">Confirm your payment</p>
+            <p class="mt-1 md:mt-2 w-[90%] md:w-[80%] text-white text-sm md:text-base font-bold">Tap on ‘Subscribe now’ to make the payment and start your subscription</p>
+          </div>
+        </div>
+        <div class="flex gap-4 md:gap-7 items-center mt-3 md:mt-5">
+          <div class="bg-white px-4 py-3 md:px-7 md:py-5 text-center rounded-full font-bold text-sm md:text-lg cursor-pointer" id="img-count">3</div>
+          <div>
+            <p class="text-lg md:text-2xl font-bold mt-2 md:mt-3 text-white">You’re now subscribed</p>
+            <p class="mt-1 md:mt-2 w-[90%] md:w-[80%] text-white text-sm md:text-base font-bold">Start saving with Careem Plus. You can easily track your savings on your Careem Plus profile.</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
- 
 <!-- subscribe to dise shuttel end -->
 
 
@@ -240,7 +228,7 @@
 
 <!-- Top Questions section end -->
 
-<script src="../asset/app.js    "></script>
+<script src="app.js"></script>
 </body>
 
 </html>

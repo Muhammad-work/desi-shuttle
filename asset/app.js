@@ -1,23 +1,20 @@
-let sidebar = document.querySelector('.sidebat-container');
-let sidebatBtn = document.querySelector('.sidebar-bar');
-let navBarBtn = document.querySelector('.fa-bar');
-
+let sidebar = document.querySelector('.sidebat-container'); 
+let sidebarBtn = document.querySelector('.sidebar-bar'); 
+let navBarBtn = document.querySelector('.fa-bar'); 
 let setNewImg = document.querySelector('#setNewImg');
 
-
-    
-navBarBtn.addEventListener('click',()=>{
-   sidebar.style.transform = 'translateX(0px)' ; 
+navBarBtn.addEventListener('click', () => {
+   sidebar.style.transform = 'translateX(0px)';
 });
 
-sidebatBtn.addEventListener('click',()=>{
-   sidebar.style.transform = 'translateX(-100%)' ; 
+sidebarBtn.addEventListener('click', () => {
+   sidebar.style.transform = 'translateX(-100%)';
 });
-
 
 let imgCountElements = document.querySelectorAll('#img-count');
-
 let newArr = Array.from(imgCountElements);
+let currentIndex = 0;
+let intervalId;
 
 if (newArr.length > 0) {
     newArr[0].style.backgroundColor = '#00493E';
@@ -26,58 +23,46 @@ if (newArr.length > 0) {
 
 const removebg = () => {
     newArr.forEach(imgItem => {
-        imgItem.style.backgroundColor = ''; 
-        imgItem.style.color = '#fff'; 
-        imgItem.style.color = 'balck'; 
+        imgItem.style.backgroundColor = '';
+        imgItem.style.color = '#000';
     });
 }
 
-const changeBgColor = () => {
-    let currentIndex = 0; 
-    setInterval(() => {
-        
-       removebg();
-       
-       if (newArr.length > 0) {
-          newArr[currentIndex].style.backgroundColor = '#00493E'; 
-          newArr[currentIndex].style.color = '#fff'; 
-          
-         //  newArr[currentIndex].src = 'https://careem-public-web-media.imgix.net/02_Confirm_your_payment_2x_f25ec2ab76.png'; 
-          currentIndex = (currentIndex + 1) % newArr.length; 
+const updateBgAndImage = (index) => {
+    removebg();
 
-          if (newArr.length  > 0 || newArr.length <= 1) {
-            console.log('jo');
+    newArr[index].style.backgroundColor = '#00493E';
+    newArr[index].style.color = '#fff';
+
+    if (index === 0) {
+        setNewImg.src = 'https://careem-public-web-media.imgix.net/02_Confirm_your_payment_2x_f25ec2ab76.png';
+    } else if (index === 1) {
+        setNewImg.src = 'https://careem-public-web-media.imgix.net/01_Tap_on_careem_plus_2x_8d099410a7.png';
+    } else if (index === 2) {
+        setNewImg.src = 'https://careem-public-web-media.imgix.net/03_You_re_are_now_subscribed_2x_0878968a44.png';
+    } else {
+        setNewImg.src = 'https://careem-public-web-media.imgix.net/default_image.png'; // Default image
+    }
+}
+
+const changeBgColor = () => {
+    intervalId = setInterval(() => {
+        updateBgAndImage(currentIndex);
+        currentIndex = (currentIndex + 1) % newArr.length;
+    }, 2000);
+}
+
+const addBgColor = () => {
+    newArr.forEach((imgItem, index) => {
+        imgItem.addEventListener('click', () => {
+            clearInterval(intervalId); 
+            currentIndex = index;
+            updateBgAndImage(index); 
             
-          }
-         }
-      }, 2000); 
+            setTimeout(changeBgColor, 3000);
+        });
+    });
 }
 
 changeBgColor();
-
-// const stopBgColor = () =>{
-//    newArr.forEach((imgItem)=>{
-//       imgItem.addEventListener('mouseover',(e)=>{
-//        let targer = e.target;
-//         targer.style.backgroundColor='red';
-//       })
-     
-//    })
-  
-// }
-// stopBgColor();
-
-const addBgColor = () =>{
-    newArr.forEach((imgItem)=>{
-       imgItem.addEventListener('click',(e)=>{
-        let targetBtn = e.target;
-        targetBtn[0] = setNewImg;
-        targetBtn[1] = setNewImg.src='https://careem-public-web-media.imgix.net/02_Confirm_your_payment_2x_f25ec2ab76.png';
-        targetBtn[2] = setNewImg.src='https://careem-public-web-media.imgix.net/03_You_re_are_now_subscribed_2x_0878968a44.png';
-        
-       })
-      
-    })
-   
-}
 addBgColor();
